@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { elastic as Menu } from "react-burger-menu";
+import Context from "./context/Context";
+import Header from "./common/Header";
+import logo from "./logo.svg";
+
+function Home(props) {
+  return (
+    <>
+      <Header {...props} />
+      <img src={logo} className="logo" alt="logo" />
+    </>
+  );
+}
 
 function App() {
+  const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="app">
+      <Router>
+        <Menu
+          isOpen={toggleMenu}
+          onStateChange={state => setToggleMenu(state.isOpen)}
         >
-          Learn React
-        </a>
-      </header>
+          <Link to="/" onClick={() => setToggleMenu(false)}>
+            Home
+          </Link>
+          <Link to="/context" onClick={() => setToggleMenu(false)}>
+            Context
+          </Link>
+        </Menu>
+
+        <Switch>
+          <Route path="/context" component={Context} />
+          <Route path="/" component={Home} />
+        </Switch>
+      </Router>
     </div>
   );
 }

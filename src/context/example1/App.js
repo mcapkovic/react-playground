@@ -32,7 +32,7 @@ function FunctionL3() {
   return <div>FunctionL3: {value}</div>;
 }
 
-function SomenthingL2() {
+function SomethingL2() {
   console.clear();
   return (
     <>
@@ -52,7 +52,7 @@ function ContextE1(props) {
           onChange={event => setInput1(event.target.value)}
         />
         <MyContext.Provider value={input1}>
-          <SomenthingL2 />
+          <SomethingL2 />
         </MyContext.Provider>
     </Page>
   );

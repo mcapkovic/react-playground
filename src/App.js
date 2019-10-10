@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { elastic as Menu } from "react-burger-menu";
 import Context from "./context/Context";
+import Hooks from "./hooks/Hooks";
 import Header from "./common/Header";
 import logo from "./logo.svg";
 
@@ -30,10 +31,14 @@ function App() {
           <Link to="/context" onClick={() => setToggleMenu(false)}>
             Context
           </Link>
+          <Link to="/hooks" onClick={() => setToggleMenu(false)}>
+            Hooks
+          </Link>
         </Menu>
 
         <Switch>
           <Route path="/context" component={Context} />
+          <Route path="/hooks" component={Hooks} />
           <Route path="/" component={Home} />
         </Switch>
       </Router>

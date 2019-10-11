@@ -47,13 +47,11 @@ function ContextE1(props) {
   const [input1, setInput1] = useState("default");
   return (
     <Page {...props}>
-        <input
-          value={input1}
-          onChange={event => setInput1(event.target.value)}
-        />
-        <MyContext.Provider value={input1}>
-          <SomethingL2 />
-        </MyContext.Provider>
+      <h1>Context basic usage</h1>
+      <input value={input1} onChange={event => setInput1(event.target.value)} />
+      <MyContext.Provider value={input1}>
+        <SomethingL2 />
+      </MyContext.Provider>
     </Page>
   );
 }

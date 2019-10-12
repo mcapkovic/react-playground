@@ -1,0 +1,51 @@
+@import "normalize.css";
+@import "dashboard.scss";
+@import "external.scss";
+
+.app {
+  background-color: #282c34;
+  color: white;
+  min-height: 100vh;
+}
+
+.logo {
+  height: 50vmin;
+  margin: 0px auto;
+  width: 100%;
+}
+
+.header {
+  font-size: 1.5em;
+  padding: 36px 0px 0px 100px;
+  font-weight: 700;
+
+  &__menu {
+    color: white;
+    margin-left: 2em;
+    color: rgb(255, 189, 42);
+  }
+
+  a {
+    text-decoration: none;
+    margin-left: 0.5em;
+  }
+  /* unvisited link */
+  a:link {
+    color: rgb(255, 189, 42);
+  }
+
+  /* visited link */
+  a:visited {
+    color: rgb(255, 189, 42);
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: white;
+  }
+}
+
+.page {
+  margin-top: 30px;
+  padding: 0px 100px;
+}

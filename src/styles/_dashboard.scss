@@ -1,0 +1,46 @@
+.dasboard {
+  margin: 30px 50px 20px 100px;
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    text-decoration: none;
+    margin-left: 0.5em;
+    font-size: 1.5em;
+  }
+  /* unvisited link */
+  a:link {
+    color: white;
+  }
+
+  /* visited link */
+  a:visited {
+    color: white;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: rgba(255, 255, 255, 0.705);
+  }
+}
+
+.card {
+  display: flex;
+  min-width: 200px;
+  flex: 1;
+  margin: 1rem;
+  border-radius: 10px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.075);
+
+  &__content {
+    padding: 20px;
+    margin: 0px auto;
+    text-align: center;
+    align-self: center;
+    &--vs {
+      display: block;
+      font-size: 0.7em;
+    }
+  }
+}

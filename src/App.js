@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./styles/all.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { elastic as Menu } from "react-burger-menu";
 import Context from "./context/Context";

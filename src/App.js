@@ -5,12 +5,24 @@ import { elastic as Menu } from "react-burger-menu";
 import Context from "./context/Context";
 import Hooks from "./hooks/Hooks";
 import Header from "./common/Header";
+import Template from "./template/Template";
 import logo from "./logo.svg";
+import Dashboard from "./common/dashboard/Dashboard";
+import Card from "./common/dashboard/Card";
+import Content from "./common/dashboard/Content";
 
 function Home(props) {
   return (
     <>
       <Header {...props} />
+      <Dashboard>
+        <Card to={`/context`}>
+          <Content>Context</Content>
+        </Card>
+        <Card to={`/hooks`}>
+          <Content>Hooks</Content>
+        </Card>
+      </Dashboard>
       <img src={logo} className="logo" alt="logo" />
     </>
   );
@@ -34,12 +46,16 @@ function App() {
           <Link to="/hooks" onClick={() => setToggleMenu(false)}>
             Hooks
           </Link>
+          <Link to="/template" onClick={() => setToggleMenu(false)}>
+            Template
+          </Link>
         </Menu>
 
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route path="/context" component={Context} />
           <Route path="/hooks" component={Hooks} />
-          <Route path="/" component={Home} />
+          <Route path="/template" component={Template} />
         </Switch>
       </Router>
     </div>

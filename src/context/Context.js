@@ -1,26 +1,34 @@
-import React, { useState, useContext } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
+
+
+
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 import Header from "../common/Header";
 import Expample1 from "./example1/App";
-import logo from '../logo.svg';
-
+import Template from "./exampleX/App";
+import logo from "../logo.svg";
+import Dashboard from "../common/dashboard/Dashboard";
+import Card from "../common/dashboard/Card";
+import Content from "../common/dashboard/Content";
 
 function Default(props) {
   const { match } = props;
   return (
-      <>
-    <Header
-      {...props}
-      headerRender={
-        <>
-          Examples:
-          <Link to={`${match.url}/expample1`}>example1</Link>
-          <Link to={`${match.url}/expample2`}>example2</Link>
-        </>
-      }
-    />
-    <img src={logo} className="logo" alt="logo" />
-</>
+    <>
+      <Header {...props} />
+      <Dashboard>
+        <Card to={`${match.url}/expample1`}>
+          <Content>
+          Context basic usage
+          </Content>
+        </Card>
+        <Card to={`${match.url}/template`}>
+          <Content>Empty</Content>
+        </Card>
+      </Dashboard>
+      <img src={logo} className="logo" alt="logo" />
+    </>
   );
 }
 
@@ -30,7 +38,7 @@ function Context({ match }) {
       <Switch>
         <Route exact path={match.path} component={Default} />
         <Route path={`${match.path}/expample1`} component={Expample1} />
-        <Route path={`${match.path}/expample2`} component={Expample1} />
+        <Route path={`${match.path}/template`} component={Template} />
       </Switch>
     </>
   );

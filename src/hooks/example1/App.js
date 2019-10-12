@@ -15,10 +15,11 @@ function SomethingL2(props) {
   const callback2 = useCallback(() => callbackDoSomething(props.input1), [
     props.input1
   ]); // callbackDoSomething function is stored in callback2 and updated on input1 change
-
+  
+  // useCallback(fn, deps) is equivalent to useMemo(() => fn, deps) 
+  
   const memo = useMemo(memoDoSomething, [props.input1]); // memoDoSomething function is executed and result is stored in memo and updated on input1 change
   const memo2 = useMemo(() => memoDoSomething(props.input1), [props.input1]); // memoDoSomething function is executed and result is stored in memo2 and updated on input1 change
-  // useCallback(fn, deps) is equivalent to useMemo(() => fn, deps) 
 
   return (
     <div>
@@ -32,7 +33,7 @@ function SomethingL2(props) {
   );
 }
 
-function ContextE1(props) {
+function Example(props) {
   const [input1, setInput1] = useState("input1");
   const [input2, setInput2] = useState("input2");
 
@@ -46,4 +47,4 @@ function ContextE1(props) {
   );
 }
 
-export default ContextE1;
+export default Example;

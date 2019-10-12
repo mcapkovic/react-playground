@@ -6,7 +6,7 @@
 
 .logo {
   height: 50vmin;
-  margin: 100px auto;
+  margin: 0px auto;
   width: 100%;
 }
 
@@ -134,4 +134,53 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .page{
   margin-top: 30px;
   padding: 0px 100px;
+}
+
+.dasboard{
+  margin: 30px 50px 20px 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.dasboard a{
+  text-decoration: none;
+  margin-left: 0.5em;
+  font-size: 1.5em;
+}
+/* unvisited link */
+.dasboard a:link {
+  color: white
+}
+
+/* visited link */
+.dasboard a:visited {
+  color: white
+}
+
+/* mouse over link */
+.dasboard a:hover {
+  color: rgba(255, 255, 255, 0.705)
+}
+
+.card{
+  display: flex;
+  min-width: 200px;
+  flex: 1;
+  margin: 1rem;
+  border-radius: 10px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.075);
+}
+.card__content{
+  padding: 20px;
+  margin: 0px auto;
+  text-align: center;
+  align-self: center;
+}
+
+.card__content--vs{
+  display: block;
+  font-size: 0.7em;
 }

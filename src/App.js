@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import 'highlight.js/styles/github.css';
 import "./styles/all.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { elastic as Menu } from "react-burger-menu";

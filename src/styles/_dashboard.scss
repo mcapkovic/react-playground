@@ -7,20 +7,21 @@
     text-decoration: none;
     margin-left: 0.5em;
     font-size: 1.5em;
-  }
-  /* unvisited link */
-  a:link {
-    color: white;
-  }
 
-  /* visited link */
-  a:visited {
-    color: white;
-  }
+    /* unvisited link */
+    &:link {
+      color: white;
+    }
 
-  /* mouse over link */
-  a:hover {
-    color: rgba(255, 255, 255, 0.705);
+    /* visited link */
+    &:visited {
+      color: white;
+    }
+
+    /* mouse over link */
+    &:hover {
+      color: rgba(255, 255, 255, 0.705);
+    }
   }
 }
 

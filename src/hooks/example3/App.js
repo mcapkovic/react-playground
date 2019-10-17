@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Page from "../../common/Page";
 
-function changeState (setState) {
+function changeState(setState) {
   const randomValue = Math.random();
   setState(randomValue);
-
 }
 
 function ChildLevel2(props) {
@@ -15,7 +14,6 @@ function ChildLevel2(props) {
   const [value5, setValue5] = useState("");
   const [input3, setInput3] = useState("input3");
 
-
   useEffect(() => {
     // console.log('useEffect called')
     setValue1(props.input1);
@@ -25,7 +23,7 @@ function ChildLevel2(props) {
     changeState(setValue5);
   }, [props.input1, input3]);
 
-  const random = () =>{
+  const random = () => {
     // console.log("random called");
     const randomValue = Math.random();
     setValue1(randomValue);
@@ -33,7 +31,7 @@ function ChildLevel2(props) {
     setValue3(randomValue);
     setValue4(randomValue);
     changeState(setValue5);
-  }
+  };
 
   console.log("ChildLevel2 render");
   return (
@@ -50,9 +48,9 @@ function Example3(props) {
 
   return (
     <Page {...props}>
-      <h1>template</h1>
+      <h1>Multiple setState call</h1>
       <input value={input1} onChange={event => setInput1(event.target.value)} />
-      <ChildLevel2 input1={input1}  />
+      <ChildLevel2 input1={input1} />
     </Page>
   );
 }

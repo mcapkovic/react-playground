@@ -6,6 +6,7 @@ import Context from "./context/Context";
 import Hooks from "./hooks/Hooks";
 import Header from "./common/Header";
 import Template from "./template/Template";
+import WebComponents from "./web-components/WebComponents";
 import logo from "./logo.svg";
 import Dashboard from "./common/dashboard/Dashboard";
 import Card from "./common/dashboard/Card";
@@ -25,6 +26,9 @@ function Home(props) {
         </Card>
         <Card to={`/hooks`}>
           <Content>Hooks</Content>
+        </Card> 
+        <Card to={`/web-components`}>
+          <Content>Web Components</Content>
         </Card>
       </Dashboard>
       <img src={logo} className="logo" alt="logo" />
@@ -44,14 +48,17 @@ function App() {
           <Link to="/" onClick={() => setToggleMenu(false)}>
             Home
           </Link>
+          <Link to="/basic" onClick={() => setToggleMenu(false)}>
+          Basic
+          </Link>
           <Link to="/context" onClick={() => setToggleMenu(false)}>
             Context
           </Link>
           <Link to="/hooks" onClick={() => setToggleMenu(false)}>
             Hooks
           </Link>
-          <Link to="/basic" onClick={() => setToggleMenu(false)}>
-          Basic
+          <Link to="/web-components" onClick={() => setToggleMenu(false)}>
+          Web Components
           </Link>
           <Link to="/template" onClick={() => setToggleMenu(false)}>
             Template
@@ -63,6 +70,7 @@ function App() {
           <Route path="/context" component={Context} />
           <Route path="/hooks" component={Hooks} />
           <Route path="/basic" component={Basic} />
+          <Route path="/web-components" component={WebComponents} />
           <Route path="/template" component={Template} />
         </Switch>
       </Router>

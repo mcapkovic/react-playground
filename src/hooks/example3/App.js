@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Page from "../../common/Page";
+import { DisplayState } from "react-display-state";
 
 function changeState(setState) {
   const randomValue = Math.random();
@@ -37,8 +38,8 @@ function ChildLevel2(props) {
   return (
     <div>
       <input value={input3} onChange={event => setInput3(event.target.value)} />
-      <div>{`${value1} ${value2} ${value3} ${value4} ${value5}`}</div>
       <button onClick={random}>update on click</button>
+      <DisplayState title='State title' state={{ value1, value2, value3, value4, value5 }} renderCount theme='dark' />
     </div>
   );
 }

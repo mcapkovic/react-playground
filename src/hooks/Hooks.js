@@ -4,11 +4,50 @@ import Header from "../common/Header";
 import Example1 from "./example1/App";
 import Example2 from "./example2/App";
 import Example3 from "./example3/App";
+import Example4 from "./example4/App";
 import Template from "./exampleX/App";
 import logo from "../logo.svg";
 import Dashboard from "../common/dashboard/Dashboard";
 import Card from "../common/dashboard/Card";
 import Content from "../common/dashboard/Content";
+
+const contentConfig = [
+  {
+    key: 0,
+    path: "Example1",
+    title: (
+      <>
+        useCallback <span className="card__content--vs"> vs </span> useMemo
+      </>
+    ),
+    component: Example1
+  },
+  {
+    key: 1,
+    path: "Example2",
+    title: 'Expensive initial state',
+    component: Example2
+  },
+  {
+    key: 2,
+    path: "Example3",
+    title: 'Call multiple setState',
+    component: Example3
+  },
+  {
+    key: 3,
+    path: "Example4",
+    title: 'State change during mounting',
+    component: (props) => Example4({...props, title: 'State change during mounting'})
+  },
+  {
+    key: 4,
+    path: "template",
+    title: 'Empty',
+    component: Template
+  }
+  
+];
 
 function Default(props) {
   const { match } = props;
@@ -16,20 +55,13 @@ function Default(props) {
     <>
       <Header {...props} />
       <Dashboard>
-        <Card to={`${match.url}/Example1`}>
-          <Content>
-            useCallback <span className="card__content--vs"> vs </span> useMemo
-          </Content>
-        </Card>
-        <Card to={`${match.url}/Example2`}>
-          <Content>Expensive initial state </Content>
-        </Card>
-        <Card to={`${match.url}/Example3`}>
-          <Content>Call multiple setState </Content>
-        </Card>
-        <Card to={`${match.url}/template`}>
-          <Content>Empty</Content>
-        </Card>
+        {contentConfig.map(example => (
+          <Card key={example.key} to={`${match.url}/${example.path}`}>
+            <Content>
+              {example.title}
+            </Content>
+          </Card>
+        ))}
       </Dashboard>
       <img src={logo} className="logo" alt="logo" />
     </>
@@ -40,12 +72,11 @@ function Hooks({ match }) {
   return (
     <>
       <Switch>
-        <Route exact path={match.path} component={Default} />
-        <Route path={`${match.path}/Example1`} component={Example1} />
-        <Route path={`${match.path}/Example2`} component={Example2} />
-        <Route path={`${match.path}/Example3`} component={Example3} />
+      <Route exact path={match.path} component={Default} />
+        {contentConfig.map(example => (
+          <Route key={example.key} path={`${match.path}/${example.path}`} component={example.component} />
 
-        <Route path={`${match.path}/template`} component={Template} />
+        ))}
       </Switch>
     </>
   );

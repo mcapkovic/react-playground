@@ -6,6 +6,7 @@ import Example2 from "./example2/App";
 import Example3 from "./example3/App";
 import Example4 from "./example4/App";
 import Example5 from "./example5/App";
+import Example6 from "./example6/App";
 import Template from "./exampleX/App";
 import logo from "../logo.svg";
 import Dashboard from "../common/dashboard/Dashboard";
@@ -46,10 +47,15 @@ const contentConfig = [
     path: "Example5",
     title: 'Slow initial state',
     component: (props) => Example5({...props, title: 'Slow initial state'})
-  }
-  ,
+  },
   {
     key: 5,
+    path: "Example6",
+    title: 'Simulate fetch',
+    component: (props) => Example6({...props, title: 'Simulate fetch'})
+  },
+  {
+    key: 6,
     path: "template",
     title: 'Empty',
     component: Template

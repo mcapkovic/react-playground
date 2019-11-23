@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Page from "../../common/Page";
-import stall from "../../utils/stall";
 
 function doSomething() {
   let sum = 0;

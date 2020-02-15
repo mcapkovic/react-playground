@@ -5,13 +5,14 @@ import { elastic as Menu } from "react-burger-menu";
 import Context from "./context/Context";
 import Hooks from "./hooks/Hooks";
 import Header from "./common/Header";
-import Template from "./template/Template";
+import Template from "./template";
 import WebComponents from "./web-components/WebComponents";
 import logo from "./logo.svg";
 import Dashboard from "./common/dashboard/Dashboard";
 import Card from "./common/dashboard/Card";
 import Content from "./common/dashboard/Content";
 import Basic from './basic/Basic';
+import Typescript from './typescript'
 
 function Home(props) {
   return (
@@ -60,6 +61,9 @@ function App() {
           <Link to="/web-components" onClick={() => setToggleMenu(false)}>
           Web Components
           </Link>
+          <Link to="/typescript" onClick={() => setToggleMenu(false)}>
+          Typescript
+          </Link>
           <Link to="/template" onClick={() => setToggleMenu(false)}>
             Template
           </Link>
@@ -71,6 +75,8 @@ function App() {
           <Route path="/hooks" component={Hooks} />
           <Route path="/basic" component={Basic} />
           <Route path="/web-components" component={WebComponents} />
+          <Route path="/typescript" component={Typescript} />
+
           <Route path="/template" component={Template} />
         </Switch>
       </Router>

@@ -3,7 +3,7 @@ import Header from "../../common/Header";
 import Dashboard from '../../common/dashboard/Dashboard';
 import Card from "../../common/dashboard/Card";
 import Content from "../../common/dashboard/Content";
-import logo from "../../logo.svg";
+import logo from "../../../logo.svg";
 
 function DashboardPage(props) {
     const { match } = props;

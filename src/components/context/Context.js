@@ -1,9 +1,13 @@
+
+
+
+
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../common/Header";
-import LitElementBasic from "./example1/App";
-import TemplateExample from "./exampleX/App";
-import logo from "../logo.svg";
+import Expample1 from "./example1/App";
+import Template from "./exampleX/App";
+import logo from "../../logo.svg";
 import Dashboard from "../common/dashboard/Dashboard";
 import Card from "../common/dashboard/Card";
 import Content from "../common/dashboard/Content";
@@ -14,8 +18,10 @@ function Default(props) {
     <>
       <Header {...props} />
       <Dashboard>
-        <Card to={`${match.url}/lit-element-basic`}>
-          <Content>LitElement Basic</Content>
+        <Card to={`${match.url}/expample1`}>
+          <Content>
+          Context basic usage
+          </Content>
         </Card>
         <Card to={`${match.url}/template`}>
           <Content>Empty</Content>
@@ -26,19 +32,16 @@ function Default(props) {
   );
 }
 
-function Exapmle({ match }) {
+function Context({ match }) {
   return (
     <>
       <Switch>
         <Route exact path={match.path} component={Default} />
-        <Route
-          path={`${match.path}/lit-element-basic`}
-          component={LitElementBasic}
-        />
-        <Route path={`${match.path}/template`} component={TemplateExample} />
+        <Route path={`${match.path}/expample1`} component={Expample1} />
+        <Route path={`${match.path}/template`} component={Template} />
       </Switch>
     </>
   );
 }
 
-export default Exapmle;
+export default Context;

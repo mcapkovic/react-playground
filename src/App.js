@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import "./styles/all.scss";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { elastic as Menu } from "react-burger-menu";
-import Context from "./context/Context";
-import Hooks from "./hooks/Hooks";
-import Header from "./common/Header";
-import Template from "./template";
-import WebComponents from "./web-components/WebComponents";
 import logo from "./logo.svg";
-import Dashboard from "./common/dashboard/Dashboard";
-import Card from "./common/dashboard/Card";
-import Content from "./common/dashboard/Content";
-import Basic from './basic/Basic';
-import Typescript from './typescript'
+import Context from "./components/context/Context";
+import Hooks from "./components/hooks/Hooks";
+import Header from "./components/common/Header";
+import Template from "./components/template";
+import WebComponents from "./components/web-components/WebComponents";
+import Dashboard from "./components/common/dashboard/Dashboard";
+import Card from "./components/common/dashboard/Card";
+import Content from "./components/common/dashboard/Content";
+import Basic from './components/basic/Basic';
+import Typescript from './components/typescript'
 
 function Home(props) {
   return (
@@ -30,6 +30,9 @@ function Home(props) {
         </Card> 
         <Card to={`/web-components`}>
           <Content>Web Components</Content>
+        </Card>
+        <Card to={`/typescript`}>
+          <Content>Typescript</Content>
         </Card>
       </Dashboard>
       <img src={logo} className="logo" alt="logo" />

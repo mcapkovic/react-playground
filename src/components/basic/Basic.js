@@ -1,13 +1,10 @@
-
-
-
-
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../common/Header";
-import Expample1 from "./example1/App";
-import Template from "./exampleX/App";
-import logo from "../logo.svg";
+import TemplateExample from "./exampleX/App";
+import Example1 from "./example1/App";
+import Example2 from "./example2/App";
+import logo from "../../logo.svg";
 import Dashboard from "../common/dashboard/Dashboard";
 import Card from "../common/dashboard/Card";
 import Content from "../common/dashboard/Content";
@@ -18,10 +15,14 @@ function Default(props) {
     <>
       <Header {...props} />
       <Dashboard>
-        <Card to={`${match.url}/expample1`}>
+        <Card to={`${match.url}/example1`}>
           <Content>
-          Context basic usage
+            Markdown <span className="card__content--vs"> with </span>{" "}
+            remarkable
           </Content>
+        </Card>
+        <Card to={`${match.url}/example2`}>
+          <Content>Sintax highlighter</Content>
         </Card>
         <Card to={`${match.url}/template`}>
           <Content>Empty</Content>
@@ -32,16 +33,17 @@ function Default(props) {
   );
 }
 
-function Context({ match }) {
+function Basic({ match }) {
   return (
     <>
       <Switch>
         <Route exact path={match.path} component={Default} />
-        <Route path={`${match.path}/expample1`} component={Expample1} />
-        <Route path={`${match.path}/template`} component={Template} />
+        <Route path={`${match.path}/example1`} component={Example1} />
+        <Route path={`${match.path}/example2`} component={Example2} />
+        <Route path={`${match.path}/template`} component={TemplateExample} />
       </Switch>
     </>
   );
 }
 
-export default Context;
+export default Basic;

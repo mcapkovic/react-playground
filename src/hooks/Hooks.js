@@ -7,6 +7,7 @@ import Example3 from "./example3/App";
 import Example4 from "./example4/App";
 import Example5 from "./example5/App";
 import Example6 from "./example6/App";
+import Example7 from "./example7/App";
 import Template from "./exampleX/App";
 import logo from "../logo.svg";
 import Dashboard from "../common/dashboard/Dashboard";
@@ -56,6 +57,12 @@ const contentConfig = [
   },
   {
     key: 6,
+    path: "Example7",
+    title: 'Simulate a parent fetch with data from a child',
+    component: (props) => Example7({...props, title: 'Simulate a parent fetch with data from a child'})
+  },
+  { 
+    key: 7,
     path: "template",
     title: 'Empty',
     component: Template

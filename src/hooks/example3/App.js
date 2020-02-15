@@ -50,6 +50,7 @@ function Example3(props) {
   return (
     <Page {...props}>
       <h1>Multiple setState call</h1>
+      <p>24.11.2019 React currently will batch state updates if they're triggered from within a React-based event, like a button click or input change. It will not batch updates if they're triggered outside of a React event handler, like a setTimeout().</p>
       <input value={input1} onChange={event => setInput1(event.target.value)} />
       <ChildLevel2 input1={input1} />
     </Page>

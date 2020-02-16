@@ -1,5 +1,5 @@
 import React from "react";
-// import Example1 from "./example1/App";
+import Example1 from "./example1/App";
 // import Example2 from "./example2/App";
 // import Example3 from "./example3/App";
 // import Example4 from "./example4/App";
@@ -10,6 +10,12 @@ import Template from "./exampleX/App";
 import RouterSwitch from "../common/RouterSwitch";
 
 const contentConfig = [
+  {
+    key: 1,
+    path: "Example1",
+    title: "Typescript types",
+    component: props => Example1({...props, title: "Typescript types"})
+  },
     {
       key: 0,
       path: "template",

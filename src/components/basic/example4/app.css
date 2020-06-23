@@ -1,0 +1,35 @@
+.code {
+  position: relative;
+}
+
+.code input {
+    background-color: transparent;
+    position: absolute;
+    border: none;
+    color: orange;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+.code__input1 {
+    top: 256px;
+    left: 150px;
+}
+.code__input2 {
+    top: 280px;
+    left: 160px;
+}
+
+.code__input3 {
+    top: 303px;
+    left: 160px;
+}

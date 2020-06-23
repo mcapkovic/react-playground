@@ -5,6 +5,7 @@ import TemplateExample from "./exampleX/App";
 import Example1 from "./example1/App";
 import Example2 from "./example2/App";
 import Example3 from "./example3/App";
+import Example4 from "./example4/App";
 import logo from "../../logo.svg";
 import Dashboard from "../common/dashboard/Dashboard";
 import Card from "../common/dashboard/Card";
@@ -28,6 +29,9 @@ function Default(props) {
         <Card to={`${match.url}/example3`}>
           <Content>createObjectURL</Content>
         </Card>
+        <Card to={`${match.url}/example4`}>
+          <Content>JS references</Content>
+        </Card>
         <Card to={`${match.url}/template`}>
           <Content>Empty</Content>
         </Card>
@@ -45,6 +49,7 @@ function Basic({ match }) {
         <Route path={`${match.path}/example1`} component={Example1} />
         <Route path={`${match.path}/example2`} component={Example2} />
         <Route path={`${match.path}/example3`} component={Example3} />
+        <Route path={`${match.path}/example4`} component={Example4} />
         <Route path={`${match.path}/template`} component={TemplateExample} />
       </Switch>
     </>

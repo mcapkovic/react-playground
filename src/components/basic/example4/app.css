@@ -1,13 +1,26 @@
-.code {
-  position: relative;
+.example{
+    display: flex;
 }
 
+/* .example__child{
+    width: 45%;
+} */
+
+.code {
+  position: relative;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.result{
+    width: 400px;
+}
 .code input {
     background-color: transparent;
-    position: absolute;
+    /* position: absolute; */
     border: none;
     color: orange;
-    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    /* text-shadow: 0 1px rgba(0, 0, 0, 0.3);
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     font-size: 1em;
     text-align: left;
@@ -17,7 +30,7 @@
     word-wrap: normal;
     line-height: 1.5;
     -moz-tab-size: 4;
-    tab-size: 4;
+    tab-size: 4; */
 }
 
 .code__input1 {
@@ -32,4 +45,27 @@
 .code__input3 {
     top: 303px;
     left: 160px;
+}
+
+.code__editable-parts{
+    color: #f8f8f2;
+    background: none;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    hyphens: none;
+
+
+    position: absolute;
+    top:   229px;
+    padding: 16px;
 }

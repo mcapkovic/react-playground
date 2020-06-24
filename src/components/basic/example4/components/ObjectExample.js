@@ -102,7 +102,7 @@ const person3 = {...person};
           <div>
             person.info.age ={" "}
             <input
-            type='number'
+            // type='number'
               value={person.info.age}
               onChange={(e) => {
                 person.info.age = e.target.value;

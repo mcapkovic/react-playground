@@ -124,8 +124,10 @@ function Parent(){
   const [person, setPerson] = useState(personDefault);
 
   return(
-    <FirstChild person={person} />
-    <SecondChild person={person} />
+    <>
+      <FirstChild person={person} />
+      <SecondChild person={person} />
+    </>
   )
 }
 `;

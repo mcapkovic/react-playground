@@ -12,9 +12,11 @@ function Example(props) {
   return (
     <Page {...props}>
       <h2>Edit object </h2>
+      <p>orange values are editable</p>
       <ObjectExample />
       <hr/>
       <h2>Edit object from react props</h2>
+      <p>orange values are editable</p>
       <ReactExample/>
     </Page>
   );

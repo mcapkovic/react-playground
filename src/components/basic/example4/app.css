@@ -1,21 +1,18 @@
-.example{
+.object-example{
     display: flex;
 }
 
-/* .example__child{
-    width: 45%;
-} */
 
-.code {
+.object-example .code {
   position: relative;
   flex-grow: 1;
   margin-right: 10px;
 }
 
-.result{
+.object-example .result{
     width: 400px;
 }
-.code input {
+.object-example .code input {
     background-color: transparent;
     /* position: absolute; */
     border: none;
@@ -33,21 +30,21 @@
     tab-size: 4; */
 }
 
-.code__input1 {
+.object-example .code__input1 {
     top: 256px;
     left: 150px;
 }
-.code__input2 {
+.object-example .code__input2 {
     top: 280px;
     left: 160px;
 }
 
-.code__input3 {
+.object-example .code__input3 {
     top: 303px;
     left: 160px;
 }
 
-.code__editable-parts{
+.object-example .code__editable-parts{
     color: #f8f8f2;
     background: none;
     text-shadow: 0 1px rgba(0, 0, 0, 0.3);

@@ -31,7 +31,6 @@ const person3 = {...person};
 
 
 
-
 // orange values are editable
     `;
 
@@ -67,16 +66,6 @@ const person3 = {...person};
       <div className="code">
         <PrismCode code={jsExapmple} language="js" plugins={["line-numbers"]} />
         <code className="code__editable-parts">
-          <div>
-            person.name ={" "}
-            <input
-              value={person.name}
-              onChange={(e) => {
-                person.name = e.target.value;
-                forceUpdate();
-              }}
-            />
-          </div>
           <div>
             person2.name ={" "}
             <input

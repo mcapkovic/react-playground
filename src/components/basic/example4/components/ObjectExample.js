@@ -16,13 +16,21 @@ const person3 = { ...person };
 
 function ObjectExample() {
   const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
+  const [deleteCheckbox, setDeleteCheckbox] = useState(false);
+
+  if(deleteCheckbox){
+    delete person.info.height;
+  }else{
+    person.info.height = '170cm'
+  }
 
   const jsExapmple = `
+// orange values are editable
 const person = {
 name: '${person.name}',
 info: {
     age: ${person.info.age},
-    height: '170cm',
+    ${person.info.height?`height: '170cm',`:'' }
   }
 }
 const person2 = person;
@@ -31,7 +39,7 @@ const person3 = {...person};
 
 
 
-// orange values are editable
+  ${deleteCheckbox?'': '//'}delete person.info.height
     `;
 
   const jsExapmple2 = `
@@ -40,7 +48,7 @@ const person3 = {...person};
 //  name: '${person.name}',
 //  info: {
 //    age: ${person.info.age},
-//    height: '170cm',
+//    ${person.info.height?`height: '170cm',`:'' }
 //  }
 // }
 
@@ -49,7 +57,7 @@ const person3 = {...person};
 //  name: '${person2.name}',
 //  info: {
 //    age: ${person2.info.age},
-//    height: '170cm',
+//    ${person2.info.height?`height: '170cm',`:'' }
 //  }
 // }
 
@@ -57,7 +65,7 @@ const person3 = {...person};
 //  name: '${person3.name}',
 //  info: {
 //    age: ${person3.info.age},
-//    height: '170cm',
+//    ${person3.info.height?`height: '170cm',`:'' }
 //  }
 // }
       `;
@@ -96,6 +104,16 @@ const person3 = {...person};
               onChange={(e) => {
                 person.info.age = e.target.value;
                 forceUpdate();
+              }}
+            />
+          </div>
+
+          <div>
+          <input
+            type='checkbox'
+              value={deleteCheckbox}
+              onChange={() => {
+                setDeleteCheckbox(!deleteCheckbox);
               }}
             />
           </div>
